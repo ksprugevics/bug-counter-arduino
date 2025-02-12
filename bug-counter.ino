@@ -37,9 +37,8 @@ void setup() {
 int loadSavedCounter() {
   int storedValue;
   EEPROM.get(COUNTER_ADDRESS, storedValue);
-  Serial.println(storedValue);
 
-  if (validCounterValue(storedValue)) {
+  if (!validCounterValue(storedValue)) {
     return 0;
   }
   
